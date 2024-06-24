@@ -1,0 +1,433 @@
+@charset "utf-8";
+@supports (display: grid) {}
+/* Body */
+body {
+  background: linear-gradient(to top left, #fff 0%, #efefef 100%);
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  line-height: 1.7;
+}
+/* Grid layout: header, nav, main and footer */
+#gridContainer {
+  display: grid;
+  grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+  grid-template-columns: [main] 100%;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main "
+    "footer footer footer ";
+}
+/* Header including background image */
+header {
+  grid-area: header;
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 5%;
+  padding-bottom: 10%;
+  background-image: url("img/vieweventBK.png"); /* header image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* General separator. Margins and colour are different from a separator in the header or footer  */
+hr {
+  display: block;
+  margin: 1% auto 0 auto;
+  padding-top: 5%;
+  width: 10%;
+  height: 5%;
+  border: 0;
+  border-top: 2px;
+  border-style: solid;
+}
+/* This is a separator in the header - different colour and align centre */
+.headerLine {
+  border-color: #ff3b3f; /* red */
+}
+/* Navigation */
+nav {
+  grid-area: nav;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin: 0;
+  float: right;
+  width: 90%;
+}
+/* Navigation is set to flex and direction to row */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+/* Navigation is created using a list of links */
+nav li {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 22px;
+}
+/* Style the links inside the navigation bar - font colour: white */
+nav a {
+  text-decoration: none;
+  color: #fff; /* white */
+  font-weight: 500;
+  font-size: 1.3em;
+}
+/* Change the colour of the links when hover -  from white to red and increase the font weight*/
+nav a:hover, a.active {
+  color: #ff3b3f; /* red */
+  font-weight: bolder;
+}
+/* Style for the main section - 5% of the margin on both left and right */
+main {
+  grid-area: main;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* Style the H1 tag which sits in the header */
+h1 {
+  padding-top: 15%;
+  padding-bottom: 0px;
+  margin: 0;
+  padding-left: 0;
+  font-size: 5em;
+  color: #efefef; /* off-white */
+  text-align: center;
+  line-height: 80px;
+}
+/* Set the style for any heading that uses H2 tag */
+h2 {
+  font-size: 2.6em;
+  color: #ff3b3f;
+}
+/* Set the style for any heading that uses H3 tag */
+h3 {
+  color: #2d2d2d; /* grey */
+  font-size: 1.6em;
+  margin-top: 5px;
+  text-align: center;
+}
+/* Style the logo - making sure that it's float left so it's sitting next to the navigation */
+#logo {
+  float: left;
+  width: 80px;
+  margin-left: 20px;
+  padding-top: 30px;
+  box-shadow: none;
+}
+/* Style the footer section - using linear gradient as background image */
+footer {
+  grid-area: footer;
+  background-image: linear-gradient(to right, #29323c 0%, #485563 100%); /* gradient of dark navy  */ 
+  width: 100%;
+  padding: 0;
+  margin-top: 50px;
+}
+/* Change the H2 tag in the footer ONLY */
+footer > h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+/* Style any paragraph that sits in the footer */
+footer > p {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+/* A separator in the footer is style differently to the rest of seperator - see line 36 */
+.contactLine {
+  text-align: center;
+  margin: 0 auto;
+  border-color: #ff3b3f;
+}
+/* Copyright text in the footer */
+.copyright {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 10px;
+}
+/* Social media icons in footer section - using div to group icons */
+.social {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
+.social ul {
+  padding: 5px 0;
+}
+/* List of icons are display inline-flex (as an inline-level flex container) */
+.social li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 2px;
+}
+/* Facebook size in px */
+.facebook {
+  width: 50px;
+  box-shadow: none;
+}
+/* Twitter size in px*/
+.twitter {
+  width: 50px;
+  box-shadow: none;
+}
+/* Linkedin size in px*/
+.linkedin {
+  width: 50px;
+  box-shadow: none;
+}
+/* Instagram in px */
+.instagram {
+  width: 50px;
+  box-shadow: none;
+}
+
+/* Fetched data have been put in a table and table is set to 100% width */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #29323c; /* Dark navy */
+  margin-top: 0%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+/* Style the headings in the table */
+th {
+  background-color: #29323c; /* Dark navy */
+  border-width: 1px;
+  border-style: solid;
+  border-color: #29323c; /* Dark navy  */
+  color: #fff; /* white */
+  padding: 20px;
+  font-size: 1.2em;
+}
+/* Define style for each table cell */
+td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000; /* Black */
+  padding: 20px;
+}
+
+/* Media query for large screens - 1024px or more*/
+@media screen and (min-width: 1024px) {
+  #gridContainer {
+    display: grid;
+    grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+    grid-template-columns: [main] 100%;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
+  }
+  /* Navigation */
+  nav {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0;
+    text-align: center;
+    width: 80%;
+  }
+  /* Navigation is set to flex and direction to row */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Navigation is created using a list of links */
+  nav a {
+    padding: 0.7em;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color: #fff; /* White */
+  }
+}
+/* Media query for smaller screens - 760px or less*/
+@media screen and (max-width: 768px) {
+  header {
+    grid-area: header;
+    overflow: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color: #2d2d2d; /* grey */
+  }
+  /* Decrease the font size of the H1 tag */
+  h1 {
+    padding-top: 10%;
+    padding-bottom: 0px;
+    margin: 0;
+    font-size: 2.6em;
+  }
+  main {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  /* Change the navigation width to 70% in order to fit the screen size */
+  nav {
+    padding-top: 0%;
+    padding-bottom: 0;
+    margin: 0;
+    width: 70%;
+  }
+  /* Change the font size of the items in the navigation */
+  nav a {
+    padding-right: 10%;
+    font-size: .7em;
+  }
+  /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+  #logo {
+    width: 6%;
+    margin-left: 5%;
+    padding-top: 2%;
+  }
+  /* Change the style of the table */
+  table {
+    border: 0;
+  }
+  /* Get rid of the headings by group them using thread tag */
+  thead {
+    display: none;
+  }
+  /* Change the style of table rows */
+  tr {
+    display: block;
+  }
+  /* Change the table cells */
+  td {
+    display: block;
+    text-align: left;
+  }
+  /* Style the last table cell - add bottom border */
+  table td:last-child {
+    border-bottom: 6px solid #29323c; /* 6px wide, soild and dark navy colour */
+  }
+  /* Assign value to each variable then use attr() to fetch the value of that variable. For example, 'Event Title' is assigned to {$rowObj->eventTitle} */
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-right: 1%;
+    font-size: 1em;
+    color: #2d2d2d;
+  }
+
+  /* Style the footer section */
+  footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  /* Media query for mobile sized devices - 425px or less*/
+  @media screen and (max-width: 425px) {
+    #gridContainer {
+      display: grid;
+      grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+      grid-template-columns: [main] 1fr;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+    /* Header is ful width */
+    header {
+      width: 100%;
+    }
+    /* No margins for main */
+    main {
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+    /* Reduce the size of the H1 tag */
+    h1 {
+      padding: 0;
+      font-size: 2.8em;
+    }
+    /* Reduce the size of the H2 tag */
+    h2 {
+      font-size: 2em;
+    }
+    /* Reduce the size of the H3 tag */
+    h3 {
+      font-size: 1em;
+    }
+    /* Separator in the header style remains the same, just adjust the bottom margin */
+    .headerLine {
+      margin-top: 0%;
+      margin-bottom: 5%;
+    }
+    /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+    #logo {
+      width: 6%;
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 0px;
+      padding-left: 20px;
+    }
+    /* Navigation */
+    nav {
+      width: 85%;
+    }
+    /* Style the navigation - set position: relative and z-index: 1 (bottom level)*/
+    nav a {
+      display: block;
+      line-height: 20px;
+      padding-bottom: 0%;
+      padding-right: 10%;
+      font-size: .5em;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    /* Change the style of the table to mobile responsive design */
+    table {
+      border: 0;
+    }
+    /* Get rid of the headings. Using thread tag */
+    thead {
+      display: none;
+    }
+    /* Change the style of table rows */
+    tr {
+      display: block;
+    }
+    /* Change the table cells */
+    td {
+      display: block;
+      text-align: left;
+    }
+    /* Style the last table cell - add bottom border */
+    table td:last-child {
+      border-bottom: 6px solid #29323c; /* 6px wide, soild and dark navy colour */
+    }
+   /* Assign value to each variable then use attr() to fetch the value of that variable. For example, 'Event Title' is assigned to {$rowObj->eventTitle} */
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: capitalize;
+      font-weight: bold;
+      padding-right: 1%;
+      font-size: 1em;
+      color: #2d2d2d;
+    }
+  }
+}

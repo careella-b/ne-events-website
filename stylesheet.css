@@ -1,0 +1,657 @@
+@charset "utf-8";
+@supports (display: grid) {}
+
+/* Body */
+body {
+  background: linear-gradient(to top left, #ffffff 0%, #efefef 100%);
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  line-height: 1.7;
+}
+
+/* Grid layout: header, nav, main and footer */
+#gridContainer {
+  display: grid;
+  grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+  grid-template-columns: [main] 100%;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main "
+    "footer footer footer ";
+}
+
+/* Header including background image */
+header {
+  grid-area: header;
+  overflow: auto;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  padding-bottom: 78px;
+  background-image: url("img/homepageBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Header contains a paragraph */
+header > p {
+  font-size: 26px;
+  text-align: center;
+  color: #fff;
+  padding-top: 0px;
+  margin-top: 0;
+  font-weight: 100;
+}
+
+/* Separator in the header */
+.headerLine {
+  border-color: #ff3b3f;
+  margin: 30px auto 0 auto;
+  padding-top: 0px;
+}
+
+/* An arrow pointing down in the header */
+.arrow {
+  width: 30px;
+  padding-top: 12em;
+}
+
+/* Navigation */
+nav {
+  grid-area: nav;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin: 0;
+	float: right;
+	width: 90%;
+	
+}
+
+/* Navigation is set to flex and direction to row */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+nav li {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 22px;
+
+
+}
+nav a {
+  text-decoration: none;
+  color: #ffffff;;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+/* Navigation style when hover */
+nav a:hover, a.active {
+  color: #ff3b3f;
+  font-weight: bolder;
+ 
+}
+/* Main */
+main {
+  grid-area: main;
+  margin-left: 10%;
+  margin-right: 10%;
+	
+}
+
+/* Main contains paragraph - using first child tag */
+main p:first-child {
+  font-size: 15px;
+  color: #2D2D2D;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #2d2d2d;
+  width: 100%;
+  padding: 0;
+  margin-top: 50px;
+}
+
+/* Footer contains a H2 tag */
+footer > h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+/* Footer contains paragraph */
+footer > p {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Copyright */
+.copyright {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 10px;
+}
+
+/* Link - no text decoration */
+a {
+  text-decoration: none;
+  color: #ff3b3f;
+}
+
+
+
+/* H1 tag in the header */
+h1 {
+  padding-top: 200px;
+  padding-bottom: 0px;
+  margin: 0;
+  padding-left: 0;
+  font-size: 5em;
+  color: #efefef;
+  text-align: center;
+  line-height: 80px;
+}
+
+/* H2 tag */
+h2 {
+  font-size: 30px;
+  color: #ff3b3f;
+}
+
+/* H3 tag */
+h3 {
+  color: #2D2D2D;
+  font-size: 25px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* General styling for separator */
+hr {
+  display: block;
+  height: 10px;
+  width: 10%;
+  border: 0;
+  border-top: 2px;
+  border-style: solid;
+  border-color: #2d2d2d;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  opacity: 80%;
+  margin: 0 20px;
+}
+
+/* A separator in the footer */
+.contactLine {
+  text-align: center;
+  margin: 0 auto;
+  border-color: #ff3b3f;
+}
+
+/* Button */
+.button {
+  background-color: #ff3b3f; 
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* Button when is hover */
+.button:hover {
+  background-color: #2d2d2d;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Get rid of blue box when selecting */
+.button:focus {
+  outline: none;
+}
+/* The article contains a div that groups all events (inside sections) together */
+article > div {
+  display: flex;
+  flex-direction: row;
+}
+article > div > section {
+  margin-left: 2%;
+  margin-right: 1.2%;
+  padding-left: 0%;
+  padding-right: 0%;
+  color: #2d2d2d;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* H2 tag inside article */
+article > h2 {
+  padding-top: 30px;
+  padding-bottom: 0px;
+  margin-left: 20px;
+}
+
+/* Logo */
+#logo {
+  float: left;
+  width: 80px;
+  margin-left: 20px;
+  padding-top: 30px;
+  box-shadow: none;
+}
+
+/* Every images on the website */
+img {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+section > img:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+/* Section contains paragraph */
+section > p {
+  text-align: center;
+}
+
+/* H3 tag in the section */
+section > h3 {
+  padding-top: 20px;
+}
+
+/* Social media icons - using div to group icons */
+.social {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  
+}
+.social ul {
+  padding: 5px 0;
+  
+}
+.social li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 2px;
+ 
+}
+
+/* Facebook size */
+.facebook {
+  width: 50px;
+  box-shadow: none;
+}
+
+/* Twitter size */
+.twitter {
+  width: 50px;
+  box-shadow: none;
+}
+
+/* Linkedin size */
+.linkedin {
+  width: 50px;
+  box-shadow: none;
+}
+
+/* Instagram */
+.instagram {
+  width: 50px;
+  box-shadow: none;
+}
+
+/* Media query for large screens - 1200px or more*/
+@media screen and (min-width: 1200px) {
+  #gridContainer {
+    display: grid;
+    grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+    grid-template-columns: [main] 100%;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
+  }
+	
+  /* An arrow pointing down in the header */
+  .arrow {
+    padding-bottom: 0em;
+    margin-bottom: 0;
+    padding-top: 19em;
+  }
+	
+  /* Footer */
+  footer {
+    margin-left: 0%;
+  }
+	
+  /* Main */
+  main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+	
+  /* Navigation */
+  nav {
+    padding-top: 60px;
+    text-align: center;
+	 
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav a {
+    padding: 0.7em;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    color: #ffffff;
+  }
+	
+  /* Paragraph in the main section */
+  main p:first-child {
+    font-size: 1.3em;
+    color: #2d2d2d;
+    margin-top: 0;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    column-count: 1;
+    column-gap: 1%;
+    text-align: center;
+  }
+	
+  /* Section H3 tag */
+  section > h3 {
+    font-size: 1.3em;
+    color: #2D2D2D;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    column-count: 2;
+    column-gap: 1%;
+    transform: translate(25%, 25%);
+  }
+	
+  /* Section paragraph */
+  section > p {
+    text-align: center;
+    color: #2D2D2D;
+  }
+	
+  /* Images in section - Events, Shows, Exhibitions and Artists Featured */
+  section > .img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.10), 0 17px 50px 0 rgba(0, 0, 0, 0.10);
+  }
+	
+  /* Button in section */
+  .button {
+    background-color: #ff3b3f; 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+	
+  /* Button when is hovered */
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+/* Media query for smaller screens - 760px or less*/
+@media screen and (max-width: 768px) {
+  header {
+    grid-area: header;
+    overflow: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color: #2d2d2d;
+  }
+  h1 {
+    padding-top: 200px;
+    padding-bottom: 0px;
+    margin: 0;
+    font-size: 6em;
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+  }
+  .arrow {
+    padding-top: 12.5em;
+    padding-bottom: 3em;
+  }
+  main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  main p:first-child {
+    margin-bottom: 40px;
+  }
+  nav {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0;
+	  width: 70%;
+  }
+	nav a {
+		color: #ffffff;
+		padding-right: 10%;
+		font-size: .7em;
+	}
+  section > h3 {
+    font-size: 30px;
+    padding-top: 40px;
+    margin-bottom: 3px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  section > p {
+    color: #2D2D2D;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  article > div {
+    display: flex;
+    flex-direction: column;
+  }
+  section > img {
+    width: 80%;
+    display: block;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.10), 0 17px 50px 0 rgba(0, 0, 0, 0.10);
+  }
+  #logo {
+    float: left;
+    width: 50px;
+    margin-left: 20px;
+    padding-top: 30px;
+  }
+  .button {
+    background-color: #ff3b3f; 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+/* Media query for mobile sized devices - 550px or less*/
+@media screen and (max-width: 550px) {
+  #gridContainer {
+    display: grid;
+    grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+    grid-template-columns: [main] 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+  main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  header > p {
+    font-size: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 40px;
+  }
+  .arrow {
+    padding-top: 15em;
+    padding-bottom: 3em;
+  }
+  h1 {
+    padding-top: 90px;
+    padding-bottom: 0px;
+    margin-top: 80px;
+    margin-bottom: 0;
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  h3 {
+    font-size: 0.8em;
+  }
+  main p:first-child {
+    font-size: 1em;
+    padding-bottom: 20px;
+  }
+  #logo {
+    float: left;
+    width: 30px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+  nav {
+     grid-area: nav;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin: 0;
+	float: right;
+	width: 70%;
+  }
+  nav ul {
+    display: grid;
+    list-style: none;
+  display: flex;
+  flex-direction: row;
+  }
+  nav li {
+    border-left: none;
+  }
+  nav a {
+    display: block;
+    line-height: 20px;
+    padding-bottom: 0%;
+	  padding-right: 10%;
+    font-size: .5em;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+ 
+  }
+  section > img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.10), 0 17px 50px 0 rgba(0, 0, 0, 0.10);
+  }
+  section > h3 {
+    padding-top: 15px;
+    font-size: 20px;
+  }
+  section > p {
+    font-size: 12px;
+  }
+  main p:first-child {
+    margin: 0;
+    padding-top: 0px;
+  }
+  footer > h2 {
+    font-size: 30px;
+  }
+  button {
+    background-color: #ff3b3f; 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  footer > p {
+    font-size: 10px;
+  }
+}

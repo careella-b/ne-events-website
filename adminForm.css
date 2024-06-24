@@ -1,0 +1,362 @@
+@charset "utf-8";
+/* Body */
+body {
+  background: linear-gradient(to top left, #fff 0%, #efefef 100%);
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  line-height: 1.7;
+}
+/* Header including background image */
+header {
+  overflow: auto;
+  margin-top: 0px;
+  margin-bottom: 5%;
+  padding-bottom: 10%;
+  background-image: url("img/adminFormBK.png"); /* header image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* General separator. Margins and colour are different from a separator in the header or footer  */
+hr {
+  display: block;
+  margin: 0;
+  padding-top: 3%;
+  height: 2%;
+  width: 8%;
+  border: 0;
+  border-top: 2px;
+  border-style: solid;
+  border-color: #ff3b3f;
+}
+/* This is a separator in the header - different colour and align centre */
+.headerLine {
+  border-color: #ff3b3f; /* red */
+  margin: 0 auto 0 auto;
+}
+/* Navigation */
+nav {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin: 0;
+  float: right;
+  width: 90%;
+}
+/* Navigation is set to flex and direction to row */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+/* Navigation is created using a list of links */
+nav li {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 22px;
+}
+/* Style the links inside the navigation bar - font colour: white */
+nav a {
+  text-decoration: none;
+  color: #fff; /* white */
+  font-weight: 500;
+  font-size: 1.3em;
+}
+/* Change the colour of the links when hover -  from white to red and increase the font weight*/
+nav a:hover, a.active {
+  color: #ff3b3f;
+  font-weight: bolder;
+}
+/* Style the logo - making sure that it's float left so it's sitting next to the navigation */
+#logo {
+  float: left;
+  width: 80px;
+  margin-left: 20px;
+  padding-top: 30px;
+  box-shadow: none;
+}
+/* Style for the main section - 5% of the margin on both left and right */
+main {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* Style the H1 tag which sits in the header */
+h1 {
+  padding-top: 15%;
+  padding-bottom: 1%;
+  margin: 0;
+  padding-left: 0;
+  font-size: 5em;
+  color: #efefef; /* off-white */
+  text-align: center;
+  line-height: 80px;
+}
+/* Set the style for any heading that uses H2 tag */
+h2 {
+  font-size: 2.6em;
+  color: #2d2d2d; /* grey */
+}
+/* Set the style for any heading that uses H3 tag */
+h3 {
+  color: #29323c; /* dark navy */
+  font-size: 1.6em;
+  padding-bottom: 1%;
+  margin-bottom: 0;
+}
+/* Style a confirmation page when the user submitted a new event */
+.createEvent {
+  border-radius: 5px; /* rounded border */
+  margin-top: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 1%;
+  padding-bottom: 0%;
+}
+/* Style any paragraph that is inside createEvent section */
+.createEvent > p {
+  font-size: 1.2em;
+  padding-bottom: 2%;
+  color: #29323c; /* dark navy */
+}
+/* Style the successful message. The user will only see this if no errors and form is submitted successfully */
+.successful {
+  text-align: center;
+}
+/* Style the return link */
+.return {
+  text-align: center;
+}
+/* Style the tick img */
+.tick {
+  width: 7%;
+  padding-top: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Style category image - different image will appear depends on selected option */
+.catImg {
+  padding-top: 3%;
+  padding-right: 3%;
+  margin-bottom: 0;
+  margin-top: 3%;
+  padding-bottom: 0%;
+  width: 50%;
+  z-index: 0;
+  float: right;
+}
+/* Change any paragraph that is outside of createEvent section */
+p {
+  font-size: 1.7em;
+  line-height: 20px;
+}
+a {
+  color: #ff3b3f;
+}
+/* A separator in the footer is style differently to the rest of seperator */
+.contactLine {
+  text-align: center;
+  margin: 0 auto;
+  border-color: #ff3b3f;
+}
+/* Style the footer section - using linear gradient as background image */
+footer {
+  background-color: #2d2d2d;
+  width: 100%;
+  padding: 0;
+  margin-top: 10%;
+  background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
+}
+/* Change the H2 tag in the footer ONLY */
+footer > h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+/* Style any paragraph that sits in the footer */
+footer > p {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+/* Copyright text in the footer */
+.copyright {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 10px;
+}
+/* Social media icons in footer section - using div to group icons */
+.social {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
+.social ul {
+  padding: 5px 0;
+}
+/* List of icons are display inline-flex (as an inline-level flex container) */
+.social li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 2px;
+}
+/* Facebook size in px */
+.facebook {
+  width: 50px;
+  box-shadow: none;
+}
+/* Twitter size in px*/
+.twitter {
+  width: 50px;
+  box-shadow: none;
+}
+/* Linkedin size in px*/
+.linkedin {
+  width: 50px;
+  box-shadow: none;
+}
+/* Instagram in px */
+.instagram {
+  width: 50px;
+  box-shadow: none;
+}
+/* Media query for large screens - 1024px or more*/
+@media screen and (min-width: 1024px) {
+  /* Footer */
+  footer {
+    margin-left: 0%;
+  }
+  /* Navigation */
+  nav {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0;
+    text-align: center;
+    width: 80%;
+  }
+  /* Navigation is set to flex and direction to row */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Navigation is created using a list of links */
+  nav a {
+    padding: 0.7em;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color: #fff;
+  }
+  /* Reduce the width and padding of the logo to align it with the navigation */
+  #logo {
+    width: 6%;
+    margin-top: 0%;
+    padding-top: 2%
+  }
+}
+/* Media query for smaller screens - 760px or less*/
+@media screen and (max-width: 768px) {
+  /* Decrease the font size of the H1 tag */
+  h1 {
+    padding-top: 10%;
+    padding-bottom: 0px;
+    margin: 0;
+    font-size: 2.6em;
+  }
+  /* Change the navigation width to 70% in order to fit the screen size */
+  nav {
+    padding-top: 0%;
+    padding-bottom: 0;
+    margin: 0;
+    width: 70%;
+  }
+  /* Change the font size of the items in the navigation */
+  nav a {
+    padding-right: 10%;
+    font-size: .7em;
+  }
+  /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+  #logo {
+    width: 6%;
+    margin-left: 5%;
+    padding-top: 2%;
+  }
+  /* change the width of category image to 100% width */
+  .catImg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+  /* Style the footer section */
+  footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+/* Media query for mobile sized devices - 425px or less*/
+@media screen and (max-width: 425px) {
+  /* Reduce the size of the H1 tag */
+  h1 {
+    padding: 0;
+    font-size: 2.8em;
+  }
+  /* Reduce the size of the H2 tag */
+  h2 {
+    font-size: 2em;
+  }
+  /* Reduce the size of the H3 tag */
+  h3 {
+    font-size: 1em;
+  }
+  /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+  #logo {
+    width: 6%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+  /* Navigation */
+  nav {
+    width: 85%;
+  }
+  /* Style the navigation - set position: relative and z-index: 1 (bottom level)*/
+  nav a {
+    display: block;
+    line-height: 20px;
+    padding-bottom: 0%;
+    padding-right: 10%;
+    font-size: .5em;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  /* change the style of successful message and return link*/
+  .successful, .return {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+  /* change the style of the green tick */
+  .tick {
+    width: 15%;
+  }
+  /* change the width of category image to 100% width */
+  .catImg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+}

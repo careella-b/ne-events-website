@@ -1,0 +1,352 @@
+@charset "utf-8";
+@supports (display: grid) {}
+/* Body */
+body {
+  background: linear-gradient(to top left, #fff 0%, #efefef 100%);
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  line-height: 1.7;
+}
+/* Grid layout: header, nav, main and footer */
+#gridContainer {
+  display: grid;
+  grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+  grid-template-columns: [main] 100%;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main "
+    "footer footer footer ";
+}
+/* Header including background image */
+header {
+  grid-area: header;
+  overflow: auto;
+  margin-top: 0px;
+  margin-bottom: 5%;
+  padding-bottom: 10%;
+  background-image: url("img/creditsBK.png"); /* Header image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* General separator. Margins and colour are different from a separator in the header or footer  */
+hr {
+  display: block;
+  padding-top: 5%;
+  height: 5%;
+  width: 10%;
+  border: 0;
+  border-top: 2px;
+  border-style: solid;
+  margin: 0;
+}
+/* This is a separator in the header - different colour and align centre */
+.headerLine {
+  border-color: #ff3b3f; /* red */
+  margin: 1% auto 0 auto;
+}
+/* Navigation */
+nav {
+  grid-area: nav;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin: 0;
+  float: right;
+  width: 90%;
+}
+/* Navigation is set to flex and direction to row */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+/* Navigation is created using a list of links */
+nav li {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10%;
+}
+/* Style the links inside the navigation bar - font colour: white */
+nav a {
+  text-decoration: none;
+  color: #fff; /* white */
+  font-weight: 500;
+  font-size: 1.3em;
+}
+/* Change the colour of the links when hover -  from white to red and increase the font weight*/
+nav a:hover, a.active {
+  color: #ff3b3f;
+  font-weight: bolder;
+}
+/* Style for the main section - 5% of the margin on both left and right */
+main {
+  grid-area: main;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 0;
+}
+/* Style the paragraph in the main section: References and Security */
+p {
+  font-size: 1.3em;
+  color: #2d2d2d; /* grey */
+}
+/* Set the font size of the bullet points */
+li {
+  font-size: 1.1em;
+}
+/* Style the H1 tag which sits in the header */
+h1 {
+  padding-top: 15%;
+  padding-bottom: 0px;
+  margin: 0;
+  padding-left: 0;
+  font-size: 5em;
+  color: #efefef;
+  text-align: center;
+  line-height: 80px;
+}
+/* Set the style for any heading that uses H2 tag */
+h2 {
+  font-size: 2.6em;
+  color: #ff3b3f;
+  margin-bottom: 0;
+}
+/* Set the style for any heading that uses H3 tag */
+h3 {
+  color: #2d2d2d;
+  font-size: 1.6em;
+  margin-top: 5px;
+  text-align: left;
+  color: #2d2d2d;
+}
+.name {
+  margin-top: 0;
+  padding: 0% 5% 3% 5%;
+}
+.references {
+  padding: 1% 5% 3% 5%;
+}
+.security {
+  padding: 0% 5% 3% 5%;
+}
+/* Style the logo - making sure that it's float left so it's sitting next to the navigation */
+#logo {
+  float: left;
+  width: 80px;
+  margin-left: 20px;
+  padding-top: 30px;
+  box-shadow: none;
+}
+/* Style the footer section - using linear gradient as background image */
+footer {
+  grid-area: footer;
+  background-image: linear-gradient(to right, #29323c 0%, #485563 100%); /* gradient - dark navy */
+  width: 100%;
+  padding: 0;
+  margin-top: 50px;
+}
+/* Change the H2 tag in the footer ONLY */
+footer > h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+/* Style any paragraph that sits in the footer */
+footer > p {
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+/* A separator in the footer is style differently to the rest of seperator - see line 36 */
+.contactLine {
+  text-align: center;
+  margin: 0 auto;
+  border-color: #ff3b3f;
+
+}
+/* Copyright text in the footer */
+.copyright {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 10px;
+}
+/* Social media icons in footer section - using div to group icons */
+.social {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
+.social ul {
+  padding: 5px 0;
+}
+/* List of icons are display inline-flex (as an inline-level flex container) */
+.social li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 2px;
+}
+/* Facebook size in px */
+.facebook {
+  width: 50px;
+  box-shadow: none;
+}
+/* Twitter size in px*/
+.twitter {
+  width: 50px;
+  box-shadow: none;
+}
+/* Linkedin size in px*/
+.linkedin {
+  width: 50px;
+  box-shadow: none;
+}
+/* Instagram in px */
+.instagram {
+  width: 50px;
+  box-shadow: none;
+}
+/* Media query for large screens - 1024px or more*/
+@media screen and (min-width: 1024px) {
+  /* Grid layout for large screens */
+  #gridContainer {
+    display: grid;
+    grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+    grid-template-columns: [main] 100%;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
+  }
+  /* Navigation */
+  nav {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0;
+    text-align: center;
+    width: 80%;
+  }
+  /* Navigation is set to flex and direction to row */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Navigation is created using a list of links */
+  nav a {
+    padding: 0.7em;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color: #fff;
+  }
+}
+/* Media query for smaller screens - 768px or less*/
+@media screen and (max-width: 768px) {
+  header {
+    grid-area: header;
+    overflow: auto;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 5%;
+  }
+  /* Decrease the font size of the H1 tag */
+  h1 {
+    padding-top: 10%;
+    padding-bottom: 0%;
+    margin: 0;
+    font-size: 2.6em;
+  }
+  /* Change the navigation width to 70% in order to fit the screen size */
+  nav {
+    padding-top: 0%;
+    padding-bottom: 0;
+    margin: 0;
+    width: 70%;
+  }
+  /* Change the font size of the items in the navigation */
+  nav a {
+    padding-right: 10%;
+    font-size: .7em;
+  }
+  /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+  #logo {
+    width: 6%;
+    margin-left: 5%;
+    padding-top: 2%;
+  }
+  /* Style the footer section */
+  footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+/* Media query for mobile sized devices - 425px or less*/
+@media screen and (max-width: 425px) {
+  #gridContainer {
+    display: grid;
+    grid-template-rows: [header] auto [nav] auto [content] auto [footer] auto;
+    grid-template-columns: [main] 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+  /* Reduce the size of the H1 tag */
+  h1 {
+    padding: 0;
+    font-size: 2.8em;
+  }
+  /* Reduce the size of the H2 tag */
+  h2 {
+    font-size: 2em;
+  }
+  /* Reduce the size of the H3 tag */
+  h3 {
+    font-size: 1em;
+  }
+  /* Separator in the header style remains the same, just adjust the bottom margin */
+  .headerLine {
+    margin-top: 0%;
+    margin-bottom: 5%;
+  }
+  /* Change the size of the paragrap in the main section */
+  p {
+    font-size: 1em;
+  }
+  /* Decrease the logo size and change the top padding so the logo is align with the navigation bar */
+  #logo {
+    width: 6%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+  }
+  /* Style the navigation - set position: relative and z-index: 1 (bottom level)*/
+  nav a {
+    display: block;
+    line-height: 20px;
+    padding-bottom: 0%;
+    padding-right: 10%;
+    font-size: .5em;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .name {
+    padding-top: 5%;
+  }
+}
